@@ -20,6 +20,7 @@ $(call inherit-product-if-exists, vendor/lge/sdm845-common/sdm845-common-vendor.
 COMMON_PATH := device/lge/sdm845-common
 
 # define hardware platform
+TARGET_BOARD_PLATFORM := sdm845
 PRODUCT_PLATFORM := sdm845
 
 PRODUCT_SOONG_NAMESPACES += \
@@ -457,6 +458,16 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
     android.hardware.power-service.lge-libperfmgr \
     android.hardware.power.stats@1.0-service.lge
+
+# QTI
+TARGET_COMMON_QTI_COMPONENTS := \
+    av \
+    bt \
+    display \
+    perf \
+    telephony \
+    wfd
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
